@@ -1,0 +1,96 @@
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  /* important for the full-width image to work */
+  height: 100%;
+}
+
+body {
+  font-size: 100%;
+  font-family: "Ubuntu", sans-serif;
+  background-color: #2e2d32;
+}
+
+/* -------------------------------- 
+
+Main components 
+
+-------------------------------- */
+#cd-main-content {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background-color: #3a393f;
+  /* slightly visible only when we resize this element */
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+#cd-intro {
+  position: relative;
+  height: 100%;
+  background: url("../img/bg-img.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.no-js #cd-intro {
+  height: 640px;
+}
+
+.cd-header {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  padding-left: auto;
+  padding-right: auto;
+  text-align: center;
+  background: rgba(58, 57, 63, 0.6);
+  -webkit-transition: background 0.2s;
+  -moz-transition: background 0.2s;
+  transition: background 0.2s;
+}
+@media only screen and (min-width: 768px) {
+  .cd-header {
+  }
+}
+
+.cd-blurred-bg {
+  /* we use jQuery to apply a mask to this element - CSS clip property */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/bg-img.jpg") no-repeat center center;
+  background-size: cover;
+  -webkit-filter: blur(4px);
+  filter: blur(4px);
+}
+.no-js .cd-blurred-bg {
+  display: none;
+}

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="google" content="notranslate" />
+	<meta http-equiv="Content-Language" content="zh_CN" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+  	<link rel="stylesheet" href="css/main.css" />
+  	<link rel="icon" sizes="any" mask="" href="./logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./logo.png">
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<title>HOME.BB</title>
+<script>
+        function do_search() {
+            var search_txt = document.getElementById("search_words").value;
+            var search_url = "";
+            if (search_txt == "") {
+            	search_url = "https://www.google.com/doodles/"
+            }else{
+            	search_url = "https://www.google.com/search?newwindow=1&hl=zh-CN&q=" + search_txt;
+            }
+            window.open(search_url);
+        }
+		function EnterPress(e){ //传入 event 
+		    var e = e || window.event; 
+		    if(e.keyCode == 13){ 
+            var search_txt = document.getElementById("search_words").value;
+            var search_url = "";
+            if (search_txt == "") {
+            	search_url = "https://www.google.com/doodles/"
+            }else{
+            	search_url = "https://www.google.com/search?newwindow=1&hl=zh-CN&q=" + search_txt;
+            }
+            window.open(search_url);
+		    } 
+		}
+    </script>
+</head>
+
+<body>
+<main id="cd-main-content">
+	<section id="cd-intro">
+		<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="row uniform">
+							<div style="width: 100%;min-height: 500px" class="incenter">
+								<input type="text" class="input-css" id="search_words" value="" placeholder="输入内容"  onkeypress="EnterPress(event)" style="width: 50%;margin-left: 15px;margin-right: 15px;margin-top: 10px" />
+								<button href="#" class="button special" onclick="do_search()">搜索</button>
+							</div>
+						</div>
+					</section>
+
+					
+
+			</div>
+		<header class="cd-header">
+						<a href="https://google.com" class="button">谷歌</a>
+						<a href="https://v2ex.com" class="button ">V2EX</a>
+						<a href="https://weibo.com" class="button">微博</a>
+						<a href="https://www.thepaper.cn" class="button">新闻</a>
+						<a href="https://github.com" class="button">Github</a>
+						<a href="https://down.vpsmm.com" class="button">软件</a>
+		</header>
+		<div class="cd-blurred-bg"></div>
+	</section> <!-- cd-intro -->
+</main>
+
+<div class="cd-shadow-layer"></div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>
